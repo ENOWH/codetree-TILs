@@ -1,2 +1,2 @@
-n = int(input())
-print(f"{n:.4f}")
+n = float(input())
+print(f"{n:.2f}")
