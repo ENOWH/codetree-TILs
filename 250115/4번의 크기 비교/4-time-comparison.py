@@ -1,4 +1,5 @@
-a = input()
+a = int(input())
+
 inp = input()
 arr = inp.split()
 b = int(arr[0])
