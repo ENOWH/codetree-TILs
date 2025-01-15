@@ -6,7 +6,7 @@ c = int(arr[2])
 
 if a<=b and a<=c:
     print(a)
-if b<=c and b<=a:
+elif b<=c and b<=a:
     print(b)
-if c<=a and c<=b:
+elif c<=a and c<=b:
     print(c)
