@@ -8,4 +8,4 @@ b = 10000*w/h**2
 
 print(int(b))
 if b >= 25:
-    print("obesity")
+    print("Obesity")
