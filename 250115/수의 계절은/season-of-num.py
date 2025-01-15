@@ -8,5 +8,5 @@ elif m>=6:
     print("Summer")
 elif m>=3:
     print("Spring")
-else
+else:
     print("Winter")
