@@ -4,11 +4,5 @@ a = int(arr[0])
 b = int(arr[1])
 c = int(arr[2])
 
-if a<=b and a<=c:
-    print(1, end = ' ')
-else:
-    print(0, end = ' ')
-if a==b and b==c:
-    print(1)
-else:
-    print(0)
+print(int(a<=b and a<=c), end = ' ')
+print(int(a==b and b==c))
