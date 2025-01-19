@@ -7,5 +7,5 @@ while True:
         sum_val+=n
         cnt+=1
     else:
-        print(f"{sum_val/cnt}")
+        print(f"{sum_val/cnt:.2f}")
         break
