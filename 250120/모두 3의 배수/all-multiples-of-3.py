@@ -1,5 +1,5 @@
 satisfied=True
-cnt=1
+cnt=0
 
 while True:
     cnt+=1
