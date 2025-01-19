@@ -1,10 +1,10 @@
-cnt = 0
+cnt=0
 while True:
-    n = int(input())
+    n=int(input())
     if n%2==1:
         pass
-    elif n%2==0:
-        cnt+=1
+    else:
         print(n//2)
-    if cnt>3:
+        cnt+=1
+    if cnt>=3:
         break
