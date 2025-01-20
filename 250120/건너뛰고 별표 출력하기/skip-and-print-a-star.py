@@ -1,12 +1,13 @@
 n = int(input())
+cnt=1
 
-for i in range(n):
-    for _ in range(i+1):
+for i in range(2*n-1):
+    for _ in range(cnt):
         print("*", end = "")
     print()
     print()
-for i in range(n-1, 0, -1):
-    for _ in range(i):
-        print("*", end = "")
-    print()
-    print()
+    
+    if i<=n-2:
+        cnt+=1
+    else:
+        cnt-=1
