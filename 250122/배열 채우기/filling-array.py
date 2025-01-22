@@ -7,4 +7,4 @@ for elem in given_arr:
     arr.append(elem)
 
 for elem in arr[::-1]:
-    print(elem)
+    print(elem, end=" ")
