@@ -2,10 +2,11 @@ arr = [0]*10
 a, b = map(int, input().split())
 
 while a>=1:
-    for i in range(10):
-        if i==a%b:
-            arr[i]+=1
     a//=b
+    remainder = a%b
+    for i in range(10):
+        if remainder==i:
+            arr[i]+=1
 
 sum_val=0
 for elem in arr:
