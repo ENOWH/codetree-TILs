@@ -1,7 +1,7 @@
 arr = [0]*10
 a, b = map(int, input().split())
 
-while a>=1:
+while a>1:
     a//=b
     remainder = a%b
     for i in range(10):
