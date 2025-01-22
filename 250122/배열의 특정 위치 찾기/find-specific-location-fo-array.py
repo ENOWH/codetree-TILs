@@ -1,3 +1,3 @@
 arr = list(map(int, input().split()))
 
-print(sum(arr[1::2]), sum(arr[2::3])/3)
+print(f"{sum(arr[1::2])}, {sum(arr[2::3])/3:.1f})
