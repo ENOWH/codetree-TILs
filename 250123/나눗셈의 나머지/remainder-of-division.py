@@ -1,13 +1,12 @@
-arr = [0]*10
-a, b = map(int, input().split())
+count_arr = [0]*10
+a, b = tuple(map(int, input().split()))
+ans = 0
 
 while a>1:
-    for i in range(10):
-        if i==a%b:
-            arr[i]+=1
+    count_arr[a%b] += 1
     a//=b
 
-sum_val=0
-for elem in arr:
-    sum_val+=(elem**2)
-print(sum_val)
+for elem in count_arr:
+    ans += elem ** 2
+
+print(ans)
