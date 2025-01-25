@@ -3,6 +3,9 @@ arr_A = list(map(int, input().split()))
 arr_B = list(map(int, input().split()))
 satisfied = True
 
+if n1<=n2:
+    n1, n2 = n2, n1
+
 for i in range(n1):
     if arr_A[i]==arr_B[0]:
         k=i
