@@ -1,10 +1,14 @@
 n = int(input())
 a = list(map(int, input().split()))
 
-# Write your code here!
 min_val = a[0]
-for elem in a:
-    if elem < min_val:
-        min_val=elem
+cnt = 1
 
-print(min_val, a.count(min_val))
+for i in range(n):
+    if min_val > a[i]:
+        min_val = a[i]
+        cnt = 1
+    elif min_val == a[i]:
+        cnt += 1
+
+print(min_val, cnt)
