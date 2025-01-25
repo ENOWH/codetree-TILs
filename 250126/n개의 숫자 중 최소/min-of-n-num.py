@@ -4,7 +4,7 @@ a = list(map(int, input().split()))
 min_val = a[0]
 cnt = 1
 
-for i in range(n):
+for i in range(1, n):
     if min_val > a[i]:
         min_val = a[i]
         cnt = 1
