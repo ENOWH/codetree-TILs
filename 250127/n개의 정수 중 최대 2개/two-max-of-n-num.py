@@ -1,13 +1,16 @@
 n = int(input())
-array = list(map(int, input().split()))
+arr = list(map(int, input().split()))
 
-n = len(array)
-
-for i in range(n-1):
-    min_index=i
-    for j in range(min_index+1, n):
-        if array[min_index] < array[j]:
-            min_index = j
-    array[i], array[min_index] = array[min_index], array[i]
-
-print(array[0], array[1])
+if arr[0]>arr[1]:
+		max1, max2 = arr[0], arr[1]
+else:
+		max2, max1 = arr[0], arr[1]
+		
+for i in range(2, n):
+		if arr[i] >= max1:
+				max2 = max1
+				max1 = arr[i]
+		elif arr[i] >= max2:
+				max2 = arr[i]
+				
+print(max1, max2)
