@@ -1,9 +1,11 @@
 string = input()
 n = int(input())
 
-if n <= len(string):
-    for i in range(len(string)-1, len(string)-n-1, -1):
-        print(string[i], end = "")
-else:
-    for elem in string[::-1]:
-        print(elem, end = "")
+length = len(string)
+cnt = 0
+
+for i in range(length-1, -1, -1):
+    print(string[i], end ="")
+    cnt += 1
+    if cnt > n:
+        break
