@@ -1,50 +1,22 @@
-Y, M, D = map(int, input().split())
+y, m, d = map(int, input().split())
 
-def leap_year(n):
-    if n%100==0 and n%400!=0:
-        return False
-    elif n%4==0:
-        return True
-    else:
-        return False
+def is_leap_year(n):
+    return (n%4==0 and n%100!=0)or(n%400==0)
 
-def season(m):
-    if m>=3 and m<=5:
-        return "Spring"
-    elif m>=6 and m<=8:
-        return "Summer"
-    elif m>=9 and m<=11:
-        return "Fall"
-    elif m==12 or m==1 or m==2:
-        return "Winter"
+def is_exist_day(y, m, d):
+    nums_of_days = [0, 31, 0, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+    nums_of_days[2] = 29 if is_leap_year(y) else 28
 
-def exist(y, m, d):
-    if leap_year(y):
-        if m==1 or m==3 or m==5 or m==7 or m==8 or m==10 or m==12:
-            if d>=1 and d<=31:
-                return True
-        elif m==4 or m==6 or m==9 or m==11:
-            if d>=1 and d<=30:
-                return True
-        elif m==2:
-            if d>=1 and d<=29:
-                return True
-        else:
-            return False
-    else:
-        if m==1 or m==3 or m==5 or m==7 or m==8 or m==10 or m==12:
-            if d>=1 and d<=31:
-                return True
-        elif m==4 or m==6 or m==9 or m==11:
-            if d>=1 and d<=30:
-                return True
-        elif m==2:
-            if d>=1 and d<=28:
-                return True
-        else:
-            return False
+    return d <= nums_of_days[m]
 
-if exist(Y, M, D):
-    print(season(M))
-else:
+if not is_exist_day(y, m, d):
     print(-1)
+else:
+    if 3<=m and m<=5:
+        print("Spring")
+    elif 6<=m and m<=8:
+        print("Summer")
+    elif 9<=m and m<=11:
+        print("Fall")
+    else:
+        print("Winter")
