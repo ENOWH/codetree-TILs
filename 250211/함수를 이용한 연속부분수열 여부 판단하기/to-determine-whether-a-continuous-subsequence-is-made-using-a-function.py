@@ -7,13 +7,9 @@ def subsequence(a, b):
     num2 = len(b)
 
     for i in range(num1-num2+1):
-        found = True
-        for j in range(num2):
-            if a[i+j] != b[j]:
-                found = False
-                break
-        if found:
+        if a[i:i+num2] == b:
             return True
+    
     return False
 
 if subsequence(a, b):
