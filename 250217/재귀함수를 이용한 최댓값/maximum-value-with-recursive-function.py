@@ -6,7 +6,7 @@ def maximum(n, array):
         return array[n-1]
     else:
         if maximum(n-1, array)>array[n-1]:
-            return maximum(n-1, array)
+            return maximum(n-2, array)
         else:
             return array[n-1]
 
