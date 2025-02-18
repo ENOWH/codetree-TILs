@@ -1,10 +1,13 @@
 word1 = input()
 word2 = input()
 
-word1=sorted(word1)
-word2=sorted(word2)
+def equal(a, b):
+    for elem1, elem2 in zip(a, b):
+        if elem1 != elem2:
+            return False
+    return True
 
-if word1 == word2:
+if equal(word1, word2):
     print("Yes")
 else:
     print("No")
