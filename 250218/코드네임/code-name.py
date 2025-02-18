@@ -1,21 +1,16 @@
-MAX_N = 5
+class User:
+    def __init__(self, code_name, score):
+        self.code_name = code_name
+        self.score = score
+    
+users = []
+for _ in range(5):
+    code_name, score = tuple(input().split())
+    users.append(User(code_name, int(score)))
 
-codenames = []
-scores = []
+min_idx=0
+for i in range(1, 5):
+    if users[min_idx].score > users[i].score:
+        min_idx = i
 
-class Agent:
-    def __init__(self, c, s):
-        self.codename = c
-        self.score = s
-
-for _ in range(MAX_N):
-    codename, score = input().split()
-    codenames.append(codename)
-    scores.append(int(score))
-
-idx=0
-for i in range(MAX_N):
-    if scores[i] == min(scores):
-        idx = i
-
-print(codenames[idx], scores[idx])
+print(users[min_idx].code_name, users[min_idx].score)
