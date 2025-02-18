@@ -1,17 +1,15 @@
-class Rainy:
-    def __init__(self, date, day, weather):
-        self.date = date
-        self.day = day
-        self.weather = weather
-
 n = int(input())
-arr = [tuple(input().split()) for _ in range(n)]
-rainydays = [Rainy(date, day, weather) for date, day, weather in arr
-if weather == 'Rain']
 
-target_idx=0
-for i, days in enumerate(rainydays):
-    if days.date < rainydays[target_idx].date:
-        target_idx = i
+class Forecast:
+    def __init__(self, date, day, weather):
+        self.date, self.day, self.weather = date, day, weather
 
-print(f"{rainydays[target_idx].date} {rainydays[target_idx].day} {rainydays[target_idx].weather}")
+ans = Forecast("9999-99-99", "", "")
+for _ in range(n):
+    date, day, weather = tuple(input().split())
+    f = Forecast(date, day, weather)
+    if weather == "Rain":
+        if f.date < ans.date:
+            ans = f
+
+print(f"{ans.date} {ans.day} {ans.weather}")
