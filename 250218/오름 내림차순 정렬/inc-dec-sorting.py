@@ -1,10 +1,10 @@
 n = int(input())
 nums = list(map(int, input().split()))
 
-nums.sort()
-for elem in nums:
+sorted_nums = sorted(nums)
+for elem in sorted_nums:
     print(elem, end = " ")
-nums.sort(reverse=True)
 print()
-for elem in nums:
+reversed_nums = sorted_nums[::-1]
+for elem in reversed_nums:
     print(elem, end = " ")
