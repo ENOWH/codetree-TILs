@@ -14,8 +14,8 @@ days1 = nums_of_days(m1, d1)
 days2 = nums_of_days(m2, d2)
 
 diff = days2 - days1
-print(diff)
+
 if diff>=0:
-    print(day_of_the_week[diff%7+1])
+    print(day_of_the_week[(diff+1)%7])
 else:
     print(day_of_the_week[-(-diff%7)+1])
