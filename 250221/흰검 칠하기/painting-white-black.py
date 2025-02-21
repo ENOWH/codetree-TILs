@@ -1,29 +1,35 @@
-n = int(input())  # 명령 개수
-commands = [input().split() for _ in range(n)]  # 명령 리스트
+OFFSET = 100000
+MAX_R = 200000
 
-position = 0  # 현재 위치
-tiles = {}  # {위치: 칠해진 횟수}
+n = int(input())
+arr_L = [0 for _ in range(MAX_R+1)]
+arr_R = [0 for _ in range(MAX_R+1)]
+arr = [0 for _ in range(MAX_R+1)]
 
-for command in commands:
-    distance, direction = int(command[0]), command[1]
-    
+for _ in range(n):
+    distance, direction = tuple(input().split())
+    distance = int(distance)
+
     if direction == 'L':
-        for i in range(position, position - distance, -1):  # 왼쪽으로 이동
-            tiles[i] = tiles.get(i, 0) + 1
-        position -= (distance - 1)  # 마지막 위치 반영
+        for j in range(0, -distance, -1):
+            arr[OFFSET+j] = 'L'
+            arr_L[OFFSET+j] += 1
+        OFFSET -= (distance-1)
 
     elif direction == 'R':
-        for i in range(position, position + distance):  # 오른쪽으로 이동
-            tiles[i] = tiles.get(i, 0) + 1
-        position += (distance - 1)  # 마지막 위치 반영
+        for j in range(distance):
+            arr[OFFSET+j] = 'R'
+            arr_R[OFFSET+j] += 1
+        OFFSET += (distance-1)
 
-# 색상 개수 카운트
-white, black, gray = 0, 0, 0
+white, black, gray = 0,0,0
 
-for count in tiles.values():
-    if count >= 2:
+for i in range(MAX_R+1):
+    if arr_L[i]>=2 and arr_R[i]>=2:
         gray += 1
-    elif count == 1:
-        black += 1  # 마지막에 칠해진 색이 검은색('R')이므로 기본값이 검은색
-
+    elif arr_L[i]>=1 or arr_R[i]>=1:
+        if arr[i] == 'L':
+            white += 1
+        else:
+            black += 1
 print(white, black, gray)
