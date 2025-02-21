@@ -4,23 +4,18 @@ OFFSET = 100000
 n = int(input())
 arr = [0 for _ in range(MAX_R+1)]
 
-cur = OFFSET
 for _ in range(n):
-    count, direction = tuple(input().split())
-    count = int(count)
+    distance, direction = tuple(input().split())
+    distance = int(distance)
 
     if direction == 'L':
-        while count>0:
-            arr[cur] = 'L'
-            count -= 1
-            if count:
-                cur -= 1
+        for j in range(0, -distance, -1):
+            arr[OFFSET+j] = 'L'
+        OFFSET -= (distance-1)
     else:
-        while count>0:
-            arr[cur] = 'R'
-            count -= 1
-            if count:
-                cur += 1
+        for j in range(distance):
+            arr[OFFSET+j] = 'R'
+        OFFSET += (distance-1)
     
 white, black = 0, 0
 for i in range(MAX_R+1):
