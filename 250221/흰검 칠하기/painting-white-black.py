@@ -29,7 +29,7 @@ for i in range(MAX_R+1):
     elif arr_cnt[i] >= 1:
         if arr_color[i] == 'L':
             white += 1
-        else:
+        elif arr_color[i] == 'R':
             black += 1
 
 print(white, black, gray)
