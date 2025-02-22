@@ -20,5 +20,9 @@ for x in range(MAX_R+1):
         if checked[x][y] == 1:
             list_x.append(x)
             list_y.append(y)
-            
-print(((max(list_x)-min(list_x))+1)*((max(list_y)-min(list_y))+1))
+
+result = ((max(list_x)-min(list_x))+1)*((max(list_y)-min(list_y))+1)
+if result>0:
+    print(result)
+else:
+    print(0)
