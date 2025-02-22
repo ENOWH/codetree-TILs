@@ -21,8 +21,8 @@ for x in range(MAX_R+1):
             list_x.append(x)
             list_y.append(y)
 
-result = ((max(list_x)-min(list_x))+1)*((max(list_y)-min(list_y))+1)
-if result>0:
+if len(list_x)>0 and len(list_y)>0:
+    result = ((max(list_x)-min(list_x))+1)*((max(list_y)-min(list_y))+1)
     print(result)
 else:
     print(0)
