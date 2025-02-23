@@ -1,10 +1,13 @@
 n = int(input())
 arr = [int(input()) for _ in range(n)]
-arr_number = []
-arr_cnt = [1 for _ in range(1001)]
+result = 0
+cnt = 0
 
-for i in range(len(arr)-1):
-    if arr[i] == arr[i+1]:
-        arr_cnt[arr[i]] += 1
-
-print(max(arr_cnt)) 
+for i in range(1, n):
+    if arr[i] == arr[i-1]:
+        cnt += 1
+    else:
+        result = max(cnt, result)
+        cnt = 0
+    result = max(cnt, result)
+print(result+1)
